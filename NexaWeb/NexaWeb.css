@@ -20,90 +20,17 @@ body {
 }
 
 @media (max-width: 768px) {
-
   .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    position:static /* garde fixed sur mobile */
   }
 
-  /* Ajoute un espace sous le header pour tout le contenu */
-  body {
-    padding-top: 65px;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #000;
-    padding: 20px;
-    flex-direction: column;
-    gap: 16px;
-    z-index: 1050;
-  }
-
-  .nav.open {
-    display: flex;
-  }
-
-  .nav a {
-    margin-left: 0;
-    font-size: 16px;
-    padding: 8px 0;
-    border-bottom: 1px solid #222;
-  }
-
-  .header .container {
-    position: relative;
-  }
-
-  .hero {
-    padding: 40px 20px 60px;  /* plus besoin de compenser ici */
-  }
-
-  .hero h1 { font-size: 26px; }
-  .hero p { font-size: 16px; }
-
-  .service-card,
-  .work-card {
-    min-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  .about-inner { flex-direction: column; }
-  .about-text, .about-side {
-    min-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  .contact-inner { flex-direction: column; }
-  .contact-text, .contact-form {
-    min-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  .services h2, .about h2, .works h2, .contact-text h2 {
-    font-size: 22px;
-  }
-
-  .footer-col {
-    min-width: 100%;
-    flex: 1 1 100%;
-  }
+  
 }
 
 .header .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 7px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;  /* logo à gauche, liens à droite */
@@ -111,7 +38,7 @@ body {
 
 .logo img {
   height:auto;
-  width: 150px;
+  width: 100px;
   display: block;
   margin: 0;
 }
@@ -132,7 +59,7 @@ body {
   background: #000;
   color: #fff;
   padding: 120px 20px;
-  
+  padding-top: 150px;
 }
 
 .hero-inner {
