@@ -21,7 +21,11 @@ body {
 
 @media (max-width: 768px) {
   .header {
-    position: static; /* ou relative */
+    position: fixed; /* garde fixed sur mobile */
+  }
+
+  .hero {
+    padding-top: 100px; /* compense la hauteur du header fixe */
   }
 }
 
