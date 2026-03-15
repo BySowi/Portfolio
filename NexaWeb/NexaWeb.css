@@ -9,6 +9,7 @@ body {
 }
 
 .header {
+  position:fixed;
   background-color: #000;          /* fond noir */
   color: #fff;
   top: 0;
