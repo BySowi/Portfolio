@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio de Pierre Dunand-Chatellet, développeur web lycéen passionné par le HTML, CSS et Python." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Pierre Dunand-Chatellet — Portfolio" />
+<meta property="og:description" content="Portfolio de Pierre Dunand-Chatellet, développeur web autodidacte lycéen passionné par le HTML, CSS et Python. Découvrez mes projets web créatifs." />
+<meta property="og:image" content="https://bysowi.github.io/Portfolio/image/result_Logo.png" />
+<meta property="og:url" content="https://bysowi.github.io/Portfolio/" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="bysowi.github.io">
+<meta property="twitter:url" content="https://bysowi.github.io/Portfolio/">
+<meta name="twitter:title" content="Pierre Dunand-Chatellet — Portfolio">
+<meta name="twitter:description" content="Portfolio de Pierre Dunand-Chatellet, développeur web autodidacte lycéen passionné par le HTML, CSS et Python. Découvrez mes projets web créatifs.">
+<meta name="twitter:image" content="https://bysowi.github.io/Portfolio/image/result_Logo.png">
+
+<title>Pierre Dunand-Chatellet — Portfolio</title>
+<link rel="icon" type="image/png" href="image/Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+
+    /* ============================================
+       VARIABLES & RESET
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0a0a0a;
+      --surface:  #111111;
+      --card:     #161616;
+      --border:   rgba(255,255,255,0.08);
+      --border-h: rgba(255,255,255,0.18);
+      --text:     #f0ede6;
+      --muted:    #888888;
+      --accent:   #2da9dc;
+      --accent2:  #25e445;
+      --gold:     #c8a96e;
+      --font-d:   'Playfair Display', serif;
+      --font-b:   'DM Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       NAVIGATION
+    ============================================ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 4rem;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 4rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 65% 35%, rgba(45,169,220,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 15% 80%, rgba(37,228,69,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 8rem;
+      width: 0.5px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 10%, var(--border) 40%, transparent 90%);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-title {
+      font-family: var(--font-d);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .hero-title em { font-style: italic; color: var(--gold); }
+
+    .hero-desc {
+      max-width: 460px;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      border: 0.5px solid var(--border-h);
+      padding: 0.9rem 2rem;
+      border-radius: 2px;
+      transition: border-color 0.25s, background 0.25s;
+      animation: fadeUp 0.8s 0.3s ease both;
+      width: fit-content;
+    }
+
+    .hero-cta:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: var(--accent);
+    }
+
+    .arrow-icon {
+      display: inline-block;
+      width: 13px; height: 13px;
+      border-top: 1.2px solid currentColor;
+      border-right: 1.2px solid currentColor;
+      transform: rotate(45deg);
+      margin-bottom: -2px;
+    }
+
+    .scroll-ind {
+      position: absolute;
+      bottom: 2.5rem; right: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .scroll-line {
+      width: 0.5px; height: 48px;
+      background: linear-gradient(to bottom, transparent, var(--muted));
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50%       { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       SECTIONS BASE
+    ============================================ */
+    section { padding: 6rem 4rem; }
+
+    .s-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .s-title {
+      font-family: var(--font-d);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ============================================
+       GRILLE PROJETS
+    ============================================ */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5px;
+      background: var(--border);
+      border: 0.5px solid var(--border);
+    }
+
+    /* -----------------------------------------------
+       CARTE PROJET
+       Pour ajouter un site : copie un <article class="proj-card">
+       et modifie l'image, l'année, les tags, le nom,
+       la description et le lien.
+    ----------------------------------------------- */
+    .proj-card {
+      background: var(--card);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.25s;
+    }
+
+    .proj-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--accent);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s ease;
+    }
+
+    .proj-card:hover { background: #1c1c1c; }
+    .proj-card:hover::before { transform: scaleY(1); }
+
+    /* Miniature */
+    .proj-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .proj-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      display: block;
+      transition: opacity 0.3s, transform 0.4s;
+    }
+
+    .proj-card:hover .proj-thumb img {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    /* Placeholder si pas d'image */
+    .proj-thumb-ph {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-d);
+      font-size: 2.5rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.07);
+      background: repeating-linear-gradient(
+        45deg,
+        transparent, transparent 10px,
+        rgba(255,255,255,0.015) 10px, rgba(255,255,255,0.015) 11px
+      );
+    }
+
+    /* Méta */
+    .proj-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .proj-year { font-size: 0.7rem; letter-spacing: 0.12em; color: var(--muted); }
+
+    .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+    .tag {
+      font-size: 0.63rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.55rem;
+      border-radius: 1px;
+      background: rgba(45,169,220,0.1);
+      color: var(--accent);
+      border: 0.5px solid rgba(45,169,220,0.2);
+    }
+
+    .tag.green {
+      background: rgba(37,228,69,0.08);
+      color: var(--accent2);
+      border-color: rgba(37,228,69,0.2);
+    }
+
+    .tag.gold {
+      background: rgba(200,169,110,0.1);
+      color: var(--gold);
+      border-color: rgba(200,169,110,0.2);
+    }
+
+    .proj-name {
+      font-family: var(--font-d);
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .proj-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.7; }
+
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.73rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: auto;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    .arrow-sm {
+      display: inline-block;
+      width: 10px; height: 10px;
+      border-top: 1px solid currentColor;
+      border-right: 1px solid currentColor;
+      transform: rotate(45deg);
+      margin-bottom: -1px;
+    }
+
+    .proj-card:hover .proj-link { opacity: 1; transform: translateY(0); }
+
+    /* ============================================
+       À PROPOS
+    ============================================ */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 0.5px solid var(--border);
+      align-self: start;
+    }
+
+    .stat { background: var(--card); padding: 2rem 1.5rem; }
+
+    .stat-n {
+      font-family: var(--font-d);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-l {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ============================================
+       CONTACT
+    ============================================ */
+    .contact-sec {
+      background: var(--surface);
+      border-top: 0.5px solid var(--border);
+    }
+
+    .contact-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 3rem;
+    }
+
+    .contact-big {
+      font-family: var(--font-d);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .contact-big em { font-style: italic; color: var(--gold); }
+
+    .contact-right { text-align: right; }
+
+    .contact-availability {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 1.05rem;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--accent);
+      padding-bottom: 0.25rem;
+      transition: opacity 0.2s;
+    }
+
+    .contact-email:hover { opacity: 0.7; }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 900px) {
+      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .hero { padding-bottom: 4rem; }
+      .scroll-ind { display: none; }
+      .contact-inner { flex-direction: column; align-items: flex-start; }
+      .contact-right { text-align: left; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 3rem; }
+      .proj-grid  { grid-template-columns: 1fr; }
+    }
+
+    .about-photo {
+      width: 220px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto 2rem auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">Pierre Dunand-Chatellet</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <p class="hero-eyebrow">Développeur web &amp; Créateur digital</p>
+    <h1 class="hero-title">
+      Pierre<br>
+      <em>Dunand-Chatellet</em>
+    </h1>
+    <p class="hero-desc">
+      Bienvenue sur mon portfolio ! Vous trouverez ici une sélection des sites web que j'ai conçus et développés au cours de ces dernières années. Chaque projet reflète mon évolution en tant que développeur.
+    </p>
+    <a class="hero-cta" href="#projects">
+      Voir mes projets <span class="arrow-icon"></span>
+    </a>
+    <div class="scroll-ind">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+
+  <!-- ============================================
+       PROJETS
+       ─────────────────────────────────────────
+       Pour ajouter un site, copie le bloc
+       <article class="proj-card">…</article>
+       ci-dessous et modifie :
+         • src="..."       → chemin de ta capture d'écran
+         • proj-year       → l'année
+         • les <span class="tag"> → tes technologies
+         • proj-name       → nom du site
+         • proj-desc       → description courte
+         • href="..."      → URL du site en ligne
+       ─────────────────────────────────────────
+  ============================================ -->
+  <section id="projects">
+    <p class="s-label">Réalisations</p>
+    <h2 class="s-title">Mes projets</h2>
+
+    <div class="proj-grid">
+        <article class="proj-card">
+
+        <div class="proj-thumb">
+          <div class="proj-thumb-ph"><img src="image/Teste/pexels-didsss-35908820.jpg"></div>
+        </div>
+
+        <div class="proj-meta">
+          <span class="proj-year">2024</span>
+          <div class="tags">
+            <span class="tag">HTML / CSS</span>
+          </div>
+        </div>
+
+        <h3 class="proj-name">Connecly</h3>
+        <p class="proj-desc">
+          Teste d'un réseaux social (non terminé)
+        </p>
+
+        <a class="proj-link" href="conecly/Conecly.html" target="_blank">
+          Voir le projet <span class="arrow-sm"></span>
+        </a>
+        </article>
+      <!-- ── PROJET : NexaWeb ── -->
+      <article class="proj-card">
+
+        <div class="proj-thumb">
+          <div class="proj-thumb-ph"><img src="NexaWeb/NexaWeb/NexaWeb Logo.png"></div>
+        </div>
+
+        <div class="proj-meta">
+          <span class="proj-year">2026</span>
+          <div class="tags">
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">Responsive</span>
+          </div>
+        </div>
+
+        <h3 class="proj-name">NexaWeb</h3>
+        <p class="proj-desc">
+          Agence digitale dans un style très minimaliste
+        </p>
+
+        <a class="proj-link" href="NexaWeb/NexaWeb.html" target="_blank">
+          Voir le projet <span class="arrow-sm"></span>
+        </a>
+
+      </article>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="about">
+    <p class="s-label">À propos</p>
+    <div class="about-inner">
+
+      <div class="about-text">
+        <h2 class="s-title" style="margin-bottom:1.5rem">
+          Découvrir<br>
+          <em style="font-style:italic; color:var(--gold)">mon parcours.</em>
+        </h2>
+        <p>
+          Je me prénomme Pierre Dunand-Chatellet, développeur web autodidacte passionné depuis l'âge de 13 ans. 
+          Actuellement lycéen, j'ai acquis mes compétences en HTML, CSS et Python de manière autonome, 
+          en apprenant par la pratique et par curiosité. Je conçois ce portfolio comme le reflet de mon 
+          évolution technique et créative au fil des projets.
+        </p>
+        <p>
+          En dehors du code, je m'intéresse au design et à la création visuelle, à la photographie, 
+          à la vidéo et à la musique — des disciplines qui nourrissent directement ma sensibilité pour 
+          l'esthétique web. Les jeux vidéo font également partie de mon univers et ont été l'une de 
+          mes premières sources d'inspiration pour me lancer dans le développement.
+        </p>
+        
+      </div>
+        
+      <div class="stats">
+        <!-- Mets à jour le chiffre manuellement quand tu ajoutes un projet -->
+        <div class="stat">
+          <div class="stat-n">3</div>
+          <div class="stat-l">Projets réalisés</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">3+</div>
+          <div class="stat-l">Années d'expérience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">∞</div>
+          <div class="stat-l">Heures de code</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">∞</div>
+          <div class="stat-l">Lignes de code</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact-sec" id="contact">
+    <div class="contact-inner">
+      <div>
+        <p class="s-label">Contact</p>
+        <h2 class="contact-big">
+          Vous avez une question ? <br><em>Contactez-moi.</em>
+        </h2>
+      </div>
+      <div class="contact-right">
+        <p class="contact-availability">Pour me contacter:</p>
+        <!-- Remplace par ton vrai email -->
+        <a class="contact-email" href="mailto:dunandchatelletpierre@gmail.com">dunandchatelletpierre@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Pierre Dunand-Chatellet</span>
+    <span>Fait avec soin · Doussard, France</span>
+  </footer>
+
+</body>
+</html>
