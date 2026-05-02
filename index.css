@@ -318,6 +318,12 @@ section { padding: 6rem 4rem; }
   border-color: rgba(37,228,69,0.2);
 }
 
+.tag.purple {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
 .tag.gold {
   background: rgba(200,169,110,0.1);
   color: var(--gold);
