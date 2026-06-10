@@ -505,8 +505,6 @@ section {
   transition: transform 0.3s ease;
 }
 
-
-
 /* ============================================
    À PROPOS
 ============================================ */
@@ -609,7 +607,7 @@ section {
 /* ============================================
    FOOTER
 ============================================ */
-footer {
+box-shadow {
   padding: 2rem 4rem;
   border-top: 0.5px solid var(--border);
   display: flex;
@@ -633,7 +631,7 @@ footer {
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE GLOBAL
 ============================================ */
 @media (max-width: 900px) {
   .about-inner {
@@ -692,7 +690,7 @@ footer {
 }
 
 /* ============================================
-   CATÉGORIES PROJETS
+   CATÉGORIES PROJETS & PAGE DÉDIÉE
 ============================================ */
 
 .project-category {
@@ -713,6 +711,10 @@ footer {
   padding-top: 10rem;
 }
 
+.projects-container {
+  padding: 0 4rem;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -723,4 +725,15 @@ footer {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.75rem;
+}
+
+/* Media queries spécifiques à la page projets.html */
+@media (max-width: 768px) {
+  .projects-page {
+    padding-top: 6rem;
+  }
+
+  .projects-container {
+    padding: 0 1.5rem;
+  }
 }

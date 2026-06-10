@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,6 @@
 
 <body>
 
-  <!-- NAV -->
   <nav>
     <a class="nav-logo" href="index.html">
       Pierre Dunand-Chatellet
@@ -32,7 +32,7 @@
 
   <section class="projects-page">
 
-    <div style="padding:0 4rem;">
+    <div class="projects-container">
 
       <a href="index.html#projects" class="back-link">
         ← Retour à l'accueil
@@ -41,72 +41,11 @@
       <p class="s-label">Portfolio complet</p>
       <h1 class="s-title">Tous mes projets</h1>
 
-      <!-- ================================= -->
-      <!-- DÉVELOPPEMENT WEB -->
-      <!-- ================================= -->
-
       <div class="project-category" id="web">
         <h2 class="category-title">Développement Web</h2>
 
         <div class="proj-grid">
 
-          <!-- Connecly -->
-          <article class="proj-card">
-            <div class="proj-thumb">
-              <img src="conecly/Connecly.png">
-            </div>
-
-            <div class="proj-meta">
-              <span class="proj-year">2024</span>
-
-              <div class="tags">
-                <span class="tag">HTML / CSS</span>
-              </div>
-            </div>
-
-            <h3 class="proj-name">Connecly</h3>
-
-            <p class="proj-desc">
-              Entrainement pour un menu déroulant et page de connexion.
-            </p>
-
-            <a class="proj-link"
-               href="conecly/Conecly.html"
-               target="_blank">
-              Voir le projet
-              <span class="arrow-sm"></span>
-            </a>
-          </article>
-
-          <!-- Lanatation -->
-          <article class="proj-card">
-            <div class="proj-thumb">
-              <img src="Lanatation.fr/image/Logo ln.png">
-            </div>
-
-            <div class="proj-meta">
-              <span class="proj-year">2024</span>
-
-              <div class="tags">
-                <span class="tag">HTML / CSS</span>
-              </div>
-            </div>
-
-            <h3 class="proj-name">Lanatation.fr</h3>
-
-            <p class="proj-desc">
-              Premier site entièrement réalisé consacré à la natation.
-            </p>
-
-            <a class="proj-link"
-               href="Lanatation.fr/index.html"
-               target="_blank">
-              Voir le projet
-              <span class="arrow-sm"></span>
-            </a>
-          </article>
-
-          <!-- NexaWeb -->
           <article class="proj-card">
             <div class="proj-thumb">
               <img src="NexaWeb/NexaWeb/NexaWeb Logo.png">
@@ -127,9 +66,59 @@
               Première page d'une agence digitale minimaliste.
             </p>
 
-            <a class="proj-link"
-               href="NexaWeb/NexaWeb.html"
-               target="_blank">
+            <a class="proj-link" href="NexaWeb/NexaWeb.html" target="_blank">
+              Voir le projet
+              <span class="arrow-sm"></span>
+            </a>
+          </article>
+
+
+          <article class="proj-card">
+            <div class="proj-thumb">
+              <img src="conecly/Connecly.png">
+            </div>
+
+            <div class="proj-meta">
+              <span class="proj-year">2024</span>
+
+              <div class="tags">
+                <span class="tag">HTML / CSS</span>
+              </div>
+            </div>
+
+            <h3 class="proj-name">Connecly</h3>
+
+            <p class="proj-desc">
+              Entrainement pour un menu déroulant et page de connexion.
+            </p>
+
+            <a class="proj-link" href="conecly/Conecly.html" target="_blank">
+              Voir le projet
+              <span class="arrow-sm"></span>
+            </a>
+          </article>
+
+
+          <article class="proj-card">
+            <div class="proj-thumb">
+              <img src="Lanatation.fr/image/Logo ln.png">
+            </div>
+
+            <div class="proj-meta">
+              <span class="proj-year">2024</span>
+
+              <div class="tags">
+                <span class="tag">HTML / CSS</span>
+              </div>
+            </div>
+
+            <h3 class="proj-name">Lanatation.fr</h3>
+
+            <p class="proj-desc">
+              Premier site entièrement réalisé consacré à la natation.
+            </p>
+
+            <a class="proj-link" href="Lanatation.fr/index.html" target="_blank">
               Voir le projet
               <span class="arrow-sm"></span>
             </a>
@@ -138,44 +127,11 @@
         </div>
       </div>
 
-      <!-- ================================= -->
-      <!-- PYTHON -->
-      <!-- ================================= -->
-
       <div class="project-category" id="python">
         <h2 class="category-title">Python</h2>
 
         <div class="proj-grid">
 
-          <!-- Nim -->
-          <article class="proj-card">
-            <div class="proj-thumb">
-              <img src="Nim/JDN.jpg">
-            </div>
-
-            <div class="proj-meta">
-              <span class="proj-year">2026</span>
-
-              <div class="tags">
-                <span class="tag green">Python</span>
-              </div>
-            </div>
-
-            <h3 class="proj-name">Nim</h3>
-
-            <p class="proj-desc">
-              Jeu de Nim développé entièrement en Python.
-            </p>
-
-            <a class="proj-link"
-               href="Nim/Nim.exe"
-               download>
-              Télécharger
-              <span class="arrow-sm"></span>
-            </a>
-          </article>
-
-          <!-- Extrémités -->
           <article class="proj-card">
             <div class="proj-thumb">
               <img src="Extrémités/extremite.ico">
@@ -195,9 +151,33 @@
               Jeu de cartes développé entièrement en Python.
             </p>
 
-            <a class="proj-link"
-               href="Extrémités/Extrémités.exe"
-               download>
+            <a class="proj-link" href="Extrémités/Extrémités.exe" download>
+              Télécharger
+              <span class="arrow-sm"></span>
+            </a>
+          </article>
+
+
+          <article class="proj-card">
+            <div class="proj-thumb">
+              <img src="Nim/JDN.jpg">
+            </div>
+
+            <div class="proj-meta">
+              <span class="proj-year">2026</span>
+
+              <div class="tags">
+                <span class="tag green">Python</span>
+              </div>
+            </div>
+
+            <h3 class="proj-name">Nim</h3>
+
+            <p class="proj-desc">
+              Jeu de Nim développé entièrement en Python.
+            </p>
+
+            <a class="proj-link" href="Nim/Nim.exe" download>
               Télécharger
               <span class="arrow-sm"></span>
             </a>
@@ -206,16 +186,11 @@
         </div>
       </div>
 
-      <!-- ================================= -->
-      <!-- DESIGN -->
-      <!-- ================================= -->
-
       <div class="project-category" id="design">
         <h2 class="category-title">Design / Affiches</h2>
 
         <div class="proj-grid">
 
-          <!-- Octobre Rose -->
           <article class="proj-card">
             <div class="proj-thumb">
               <img src="Affiche/Octobre rose/Octobre rose.png">
@@ -235,9 +210,7 @@
               Affiche réalisée à la demande d'un ami pour Octobre Rose.
             </p>
 
-            <a class="proj-link"
-               href="Affiche/Octobre rose/ocotbre_rose_2025.html"
-               target="_blank">
+            <a class="proj-link" href="Affiche/Octobre rose/ocotbre_rose_2025.html" target="_blank">
               Voir le projet
               <span class="arrow-sm"></span>
             </a>
@@ -249,11 +222,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <span>© 2026 Pierre Dunand-Chatellet</span>
     <span>Fait avec soin · Doussard, France</span>
   </footer>
 
 </body>
+
 </html>
