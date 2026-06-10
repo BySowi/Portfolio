@@ -681,12 +681,6 @@ box-shadow {
   .contact-right {
     text-align: left;
   }
-
-  footer {
-    flex-direction: column;
-    gap: 0.75rem;
-    text-align: center;
-  }
 }
 
 @media (max-width: 480px) {
