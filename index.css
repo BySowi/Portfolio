@@ -607,6 +607,16 @@ section {
 /* ============================================
    FOOTER
 ============================================ */
+footer {
+  padding: 2rem 4rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
 box-shadow {
   padding: 2rem 4rem;
   border-top: 0.5px solid var(--border);
