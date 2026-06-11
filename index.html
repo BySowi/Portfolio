@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ===== SEO DE BASE ===== -->
   <title>Pierre Dunand-Chatellet — Développeur Web & Créateur Digital</title>
   <meta name="description"
     content="Portfolio de Pierre Dunand-Chatellet, développeur web autodidacte passionné depuis l'âge de 13 ans. Projets en HTML, CSS, design et création visuelle." />
@@ -14,10 +13,8 @@
   <meta name="author" content="Pierre Dunand-Chatellet" />
   <meta name="robots" content="index, follow" />
 
-  <!-- ===== URL CANONIQUE ===== -->
   <link rel="canonical" href="https://bysowi.github.io/Portfolio/" />
 
-  <!-- ===== OPEN GRAPH (réseaux sociaux / LinkedIn / WhatsApp) ===== -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bysowi.github.io/Portfolio/" />
   <meta property="og:title" content="Pierre Dunand-Chatellet — Développeur Web & Créateur Digital" />
@@ -27,7 +24,6 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Portfolio — Pierre Dunand-Chatellet" />
 
-  <!-- ===== TWITTER CARD ===== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://bysowi.github.io/Portfolio/" />
   <meta name="twitter:title" content="Pierre Dunand-Chatellet — Développeur Web & Créateur Digital" />
@@ -35,20 +31,16 @@
     content="Portfolio de Pierre Dunand-Chatellet, développeur web autodidacte. Découvrez mes projets en HTML, CSS et design créatif." />
   <meta name="twitter:image" content="https://bysowi.github.io/Portfolio/image/result_Logo.png" />
 
-  <!-- ===== FAVICON ===== -->
   <link rel="icon" type="image/png" href="image/result_Logo.png" />
 
-  <!-- ===== FONTS ===== -->
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
 
-  <!-- ===== STYLES ===== -->
   <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-  <!-- NAV -->
   <nav>
     <a class="nav-logo" href="#">Pierre Dunand-Chatellet</a>
     <ul class="nav-links">
@@ -58,7 +50,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section class="hero" id="home">
     <p class="hero-eyebrow">Développeur web &amp; Créateur digital</p>
     <h1 class="hero-title">
@@ -79,32 +70,15 @@
     </div>
   </section>
 
-  <!-- ============================================
-       PROJETS
-       ─────────────────────────────────────────
-       Pour ajouter un site, copie le bloc
-       <article class="proj-card">…</article>
-       ci-dessous et modifie :
-         • src="..."       → chemin de ta capture d'écran
-         • proj-year       → l'année
-         • les <span class="tag"> → tes technologies
-         • proj-name       → nom du site
-         • proj-desc       → description courte
-         • href="..."      → URL du site en ligne
-       ─────────────────────────────────────────
-  ============================================ -->
   <section id="projects">
     <p class="s-label">Réalisations</p>
     <h2 class="s-title">Mes projets</h2>
     <div class="proj-grid">
 
-
-
       <article class="proj-card">
         <div class="proj-thumb">
           <div class="proj-thumb-ph">
-            <!-- Remplace par une image/capture si tu en as une -->
-            <img src="Extrémités/extremite.ico" />
+            <img src="Extrémités/extremite.ico" alt="Icône du jeu de cartes Extrémités" />
           </div>
         </div>
         <div class="proj-meta">
@@ -122,12 +96,10 @@
         </a>
       </article>
 
-
       <article class="proj-card">
         <div class="proj-thumb">
           <div class="proj-thumb-ph">
-            <!-- Remplace par une image/capture si tu en as une -->
-            <img src="Nim/JDN.jpg" />
+            <img src="Nim/JDN.jpg" alt="Aperçu du Jeu de Nim" />
           </div>
         </div>
         <div class="proj-meta">
@@ -145,11 +117,10 @@
         </a>
       </article>
 
-
       <article class="proj-card">
         <div class="proj-thumb">
           <div class="proj-thumb-ph">
-            <img src="NexaWeb/NexaWeb/NexaWeb Logo.png" />
+            <img src="NexaWeb/NexaWeb/NexaWeb Logo.png" alt="Logo NexaWeb" />
           </div>
         </div>
         <div class="proj-meta">
@@ -161,19 +132,17 @@
         </div>
         <h3 class="proj-name">NexaWeb</h3>
         <p class="proj-desc">
-          Première page d'un site d'une agence digital, fait dans un style
-          minimaliste.
+          Première page d'un site d'une agence digital, fait dans un style minimaliste.
         </p>
         <a class="proj-link" href="NexaWeb/NexaWeb.html" target="_blank">
           Voir le projet <span class="arrow-sm"></span>
         </a>
       </article>
 
-
       <article class="proj-card">
         <div class="proj-thumb">
           <div class="proj-thumb-ph">
-            <img src="Affiche/Octobre rose/Octobre rose.png" />
+            <img src="Affiche/Octobre rose/Octobre rose.png" alt="Affiche Octobre Rose" />
           </div>
         </div>
         <div class="proj-meta">
@@ -191,27 +160,20 @@
         </a>
       </article>
 
-
       <div class="proj-more-card">
         <span class="proj-more-label">Portfolio complet</span>
-
-        <h3 class="proj-name">
-          Découvrir tous les projets
-        </h3>
-
+        <h3 class="proj-name">Découvrir tous les projets</h3>
         <p class="proj-desc">
-          Explorer l'ensemble de mes réalisations en développement web,
-          Python et design.
+          Explorer l'ensemble de mes réalisations en développement web, Python et design.
         </p>
         <a href="projets.html" class="proj-link">
-          Voir tous les projets
-          <span class="arrow-sm"></span>
+          Voir tous les projets <span class="arrow-sm"></span>
         </a>
       </div>
 
+    </div>
   </section>
 
-  <!-- À PROPOS -->
   <section id="about">
     <p class="s-label">À propos</p>
     <div class="about-inner">
@@ -238,7 +200,6 @@
       </div>
 
       <div class="stats">
-        <!-- Mets à jour le chiffre manuellement quand tu ajoutes un projet -->
         <div class="stat">
           <div class="stat-n">6</div>
           <div class="stat-l">Projets réalisés</div>
@@ -259,7 +220,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact-sec" id="contact">
     <div class="contact-inner">
       <div>
@@ -269,13 +229,12 @@
         </h2>
       </div>
       <div class="contact-right">
-        <p class="contact-availability">Pour me contacter:</p>
+        <p class="contact-availability">Pour me contacter :</p>
         <a class="contact-email" href="mailto:dunandchatelletpierre@gmail.com">dunandchatelletpierre@gmail.com</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <span>© 2026 Pierre Dunand-Chatellet</span>
     <span>Fait avec soin · Doussard, France</span>

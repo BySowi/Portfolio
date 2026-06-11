@@ -1,6 +1,6 @@
-/* ============================================
-   VARIABLES & RESET
-============================================ */
+/* ==========================================================================
+   1. VARIABLES, RESET & STYLES GLOBAUX (HEAD / BASE)
+   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -32,9 +32,41 @@ body {
   line-height: 1.6;
 }
 
-/* ============================================
-   NAVIGATION
-============================================ */
+/* Composants de section réutilisables */
+section {
+  padding: 6rem 4rem;
+}
+
+.s-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.s-title {
+  font-family: var(--font-d);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 3.5rem;
+}
+
+.arrow-sm {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+  margin-bottom: -1px;
+}
+
+
+/* ==========================================================================
+   2. BARRE DE NAVIGATION (NAV)
+   ========================================================================== */
 nav {
   position: fixed;
   top: 0;
@@ -77,9 +109,10 @@ nav {
   color: var(--text);
 }
 
-/* ============================================
-   HERO
-============================================ */
+
+/* ==========================================================================
+   3. SECTION D'ACCUEIL (HERO)
+   ========================================================================== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -195,6 +228,7 @@ nav {
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
+/* Animations Hero */
 @keyframes scrollPulse {
 
   0%,
@@ -219,32 +253,10 @@ nav {
   }
 }
 
-/* ============================================
-   SECTIONS BASE
-============================================ */
-section {
-  padding: 6rem 4rem;
-}
 
-.s-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-}
-
-.s-title {
-  font-family: var(--font-d);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 3.5rem;
-}
-
-/* ============================================
-   GRILLE PROJETS
-============================================ */
+/* ==========================================================================
+   4. GRILLE DE PROJETS & CARTES (PROJECTS)
+   ========================================================================== */
 .proj-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -253,9 +265,7 @@ section {
   border: 0.5px solid var(--border);
 }
 
-/* -----------------------------------------------
-   CARTE PROJET
------------------------------------------------ */
+/* Carte Projet Standard */
 .proj-card {
   background: var(--card);
   padding: 2rem;
@@ -290,7 +300,7 @@ section {
   transform: scaleY(1);
 }
 
-/* Miniature */
+/* Miniature Image */
 .proj-thumb {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -330,7 +340,7 @@ section {
       rgba(255, 255, 255, 0.015) 10px, rgba(255, 255, 255, 0.015) 11px);
 }
 
-/* Méta */
+/* Méta-données & Badges (Tags) */
 .proj-meta {
   display: flex;
   align-items: center;
@@ -378,6 +388,7 @@ section {
   border-color: rgba(200, 169, 110, 0.2);
 }
 
+/* Textes de la carte */
 .proj-name {
   font-family: var(--font-d);
   font-size: 1.35rem;
@@ -405,57 +416,36 @@ section {
   transition: opacity 0.25s, transform 0.25s;
 }
 
-.arrow-sm {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-top: 1px solid currentColor;
-  border-right: 1px solid currentColor;
-  transform: rotate(45deg);
-  margin-bottom: -1px;
-}
-
 .proj-card:hover .proj-link {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ============================================
-   CARTE VOIR TOUS LES PROJETS
-============================================ */
-
+/* Carte Spécifique "Découvrir tous les projets" */
 .proj-more-card {
   background: var(--card);
   padding: 2rem;
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
+  justify-content: flex-start;
+  gap: 1.2rem;
   text-decoration: none;
   color: inherit;
-
   position: relative;
   overflow: hidden;
-
   transition: background 0.25s;
 }
 
 .proj-more-card::before {
   content: "";
-
   position: absolute;
   top: 0;
   left: 0;
-
   width: 3px;
   height: 100%;
-
   background: var(--accent);
-
   transform: scaleY(0);
   transform-origin: bottom;
-
   transition: transform 0.3s ease;
 }
 
@@ -471,43 +461,38 @@ section {
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1rem;
+  color: var(--gold);
 }
 
 .proj-more-card .proj-name {
-  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
 }
 
 .proj-more-card .proj-desc {
-  font-size: medium;
-  margin-top: 30px;
-  margin-bottom: auto;
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  /* Crée un espace de sécurité permanent au-dessus du bouton */
 }
 
-/* Caché par défaut */
-.proj-more-card .proj-link {
+.proj-more-card .proj-link1 {
+  margin-top: auto;
   opacity: 0;
   transform: translateY(4px);
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Apparition au survol */
 .proj-more-card:hover .proj-link {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Animation légère du titre */
-.proj-more-card .proj-name {
-  transition: transform 0.3s ease;
-}
 
-/* ============================================
-   À PROPOS
-============================================ */
+/* ==========================================================================
+   5. SECTION À PROPOS & STATISTIQUES (ABOUT)
+   ========================================================================== */
 .about-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -522,6 +507,17 @@ section {
   margin-bottom: 1.25rem;
 }
 
+.about-photo {
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Bloc des Statistiques */
 .stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -552,9 +548,10 @@ section {
   color: var(--muted);
 }
 
-/* ============================================
-   CONTACT
-============================================ */
+
+/* ==========================================================================
+   6. SECTION CONTACT
+   ========================================================================== */
 .contact-sec {
   background: var(--surface);
   border-top: 0.5px solid var(--border);
@@ -604,9 +601,10 @@ section {
   opacity: 0.7;
 }
 
-/* ============================================
-   FOOTER
-============================================ */
+
+/* ==========================================================================
+   7. PIED DE PAGE (FOOTER)
+   ========================================================================== */
 footer {
   padding: 2rem 4rem;
   border-top: 0.5px solid var(--border);
@@ -617,32 +615,50 @@ footer {
   color: var(--muted);
 }
 
-box-shadow {
-  padding: 2rem 4rem;
-  border-top: 0.5px solid var(--border);
-  display: flex;
-  justify-content: space-between;
+
+/* ==========================================================================
+   8. STYLE DE LA PAGE SECONDAIRE (PROJETS.HTML)
+   ========================================================================== */
+.projects-page {
+  padding-top: 10rem;
+}
+
+.projects-container {
+  padding: 0 4rem;
+}
+
+.project-category {
+  margin-bottom: 5rem;
+}
+
+.category-title {
+  font-family: var(--font-d);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: var(--gold);
+  border-bottom: 0.5px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.back-link {
+  display: inline-flex;
   align-items: center;
-  font-size: 0.72rem;
-  color: var(--muted);
+  gap: 0.75rem;
+  margin-bottom: 4rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
-/* ============================================
-   PHOTO
-============================================ */
-.about-photo {
-  width: 220px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 16px;
-  display: block;
-  margin: 0 auto 2rem auto;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
 
-/* ============================================
-   RESPONSIVE GLOBAL
-============================================ */
+/* ==========================================================================
+   9. OPTIMISATION RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Écrans Moyens (Tablettes paysage / Petits ordinateurs) */
 @media (max-width: 900px) {
   .about-inner {
     grid-template-columns: 1fr;
@@ -650,6 +666,7 @@ box-shadow {
   }
 }
 
+/* Écrans Mobiles et Tablettes verticales (Ajustements généraux & visibilité boutons) */
 @media (max-width: 768px) {
   nav {
     padding: 1rem 1.5rem;
@@ -673,6 +690,19 @@ box-shadow {
     display: none;
   }
 
+  /* Force la visibilité permanente et ajuste l'espace des boutons sur mobile */
+  .proj-link {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .proj-more-card .proj-link {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    margin-top: 1.5rem !important;
+  }
+
   .contact-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -687,8 +717,18 @@ box-shadow {
     gap: 0.75rem;
     text-align: center;
   }
+
+  /* Ajustements spécifiques pour projets.html sur mobile */
+  .projects-page {
+    padding-top: 6rem;
+  }
+
+  .projects-container {
+    padding: 0 1.5rem;
+  }
 }
 
+/* Très petits écrans (Smartphones en mode portrait) */
 @media (max-width: 480px) {
   .hero-title {
     font-size: 3rem;
@@ -696,54 +736,5 @@ box-shadow {
 
   .proj-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-/* ============================================
-   CATÉGORIES PROJETS & PAGE DÉDIÉE
-============================================ */
-
-.project-category {
-  margin-bottom: 5rem;
-}
-
-.category-title {
-  font-family: var(--font-d);
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-  color: var(--gold);
-  border-bottom: 0.5px solid var(--border);
-  padding-bottom: 1rem;
-}
-
-.projects-page {
-  padding-top: 10rem;
-}
-
-.projects-container {
-  padding: 0 4rem;
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 4rem;
-  color: var(--accent);
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-}
-
-/* Media queries spécifiques à la page projets.html */
-@media (max-width: 768px) {
-  .projects-page {
-    padding-top: 6rem;
-  }
-
-  .projects-container {
-    padding: 0 1.5rem;
   }
 }
